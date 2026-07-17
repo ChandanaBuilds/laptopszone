@@ -9,6 +9,7 @@ import { laptops } from '@/lib/laptops'
 import { ProductCard } from '@/components/product-card'
 import { ProductFilters } from '@/components/product-filters'
 
+
 export default function LaptopsPage() {
   const [filtersOpen, setFiltersOpen] = useState(false)
 
@@ -130,7 +131,7 @@ export default function LaptopsPage() {
                 Latest Collection
               </span>
 
-              <h1 className="mt-5 text-5xl font-bold text-white">
+              <h1 className="mt-5 text-3xl md:text-4xl font-semibold text-white">
                 Find Your Perfect Laptop
               </h1>
 
@@ -148,7 +149,7 @@ export default function LaptopsPage() {
 
       {/* Search */}
 
-      <section className="-mt-10 relative z-20">
+      <section className="-mt-8 relative z-20">
 
         <div className="mx-auto max-w-7xl px-4">
 
@@ -175,19 +176,11 @@ export default function LaptopsPage() {
               </div>
 
               <button
-                className="rounded-2xl bg-primary px-8 py-4 font-semibold text-black md:hidden"
-                onClick={() =>
-                  setFiltersOpen(true)
-                }
+                onClick={() => setFiltersOpen(true)}
+                className="flex items-center gap-2 rounded-2xl border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm transition-all hover:shadow-md md:hidden"
               >
-                <div className="flex items-center gap-2">
-
-                  <Filter size={18} />
-
-                  Filters
-
-                </div>
-
+                <Filter size={18} />
+                Filters
               </button>
 
             </div>
@@ -199,37 +192,33 @@ export default function LaptopsPage() {
       </section>
       {/* Products */}
 
-      <section className="py-14">
+      <section className="py-7">
 
         <div className="mx-auto max-w-7xl px-4">
 
           <div className="flex gap-8">
 
             {/* Desktop Filters */}
-
-            <aside className="hidden lg:block w-72 shrink-0">
+            <aside className="hidden lg:block w-[300px] shrink-0">
               <div className="sticky top-24 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="mb-6 flex items-center justify-between">
+                  <h2 className="text-2xl font-bold text-slate-900">
+                    Filters
+                  </h2>
 
-                <h2 className="text-2xl font-bold mb-6">
-                  Filters
-                </h2>
+
+                </div>
 
                 <ProductFilters
                   selectedCategory={selectedCategory}
                   onCategoryChange={setSelectedCategory}
                   onPriceChange={setPriceRange}
-                  onRatingChange={setMinRating}
                   onInStockChange={setInStockOnly}
                   priceRange={priceRange}
-                  minRating={minRating}
                   inStockOnly={inStockOnly}
-                  isOpen={true}
-                  onClose={() => { }}
                 />
-
               </div>
-            </aside>
-            {/* Products */}
+            </aside>{/* Products */}
 
             <div className="flex-1">
 
@@ -239,7 +228,7 @@ export default function LaptopsPage() {
 
                 <div>
 
-                  <h2 className="text-3xl font-bold text-slate-900">
+                  <h2 className="text-2xl font-semibold text-slate-900">
                     Available Laptops
                   </h2>
 
@@ -346,7 +335,7 @@ export default function LaptopsPage() {
 
                 <div className="rounded-3xl border border-slate-200 bg-white py-20 text-center">
 
-                  <h3 className="text-3xl font-bold">
+                  <h3 className="text-2xl font-semibold">
 
                     No Products Found
 
@@ -395,74 +384,61 @@ export default function LaptopsPage() {
 
       {/* Mobile Filters */}
 
-      <ProductFilters
-        selectedCategory={selectedCategory}
-        onCategoryChange={setSelectedCategory}
-        onPriceChange={setPriceRange}
-        onRatingChange={setMinRating}
-        onInStockChange={setInStockOnly}
-        priceRange={priceRange}
-        minRating={minRating}
-        inStockOnly={inStockOnly}
-        isOpen={filtersOpen}
-        onClose={() => setFiltersOpen(false)}
-      />
+      {/* Mobile Filters */}
+      {filtersOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+            onClick={() => setFiltersOpen(false)}
+          />
 
-      {/* Bottom CTA */}
-
-      <section className="bg-slate-50 py-20">
-
-        <div className="mx-auto max-w-7xl px-4">
-
-          <div className="overflow-hidden rounded-[32px] bg-gradient-to-r from-primary to-blue-700 p-10 text-center text-white shadow-xl">
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: .6 }}
-            >
-
-              <h2 className="text-4xl font-bold">
-
-                Can't Find the Laptop You're Looking For?
-
+          <motion.div
+            initial={{ x: -350 }}
+            animate={{ x: 0 }}
+            exit={{ x: -350 }}
+            transition={{ duration: 0.3 }}
+            className="fixed left-0 top-0 z-50 h-screen w-[320px] overflow-y-auto bg-white p-6 shadow-2xl lg:hidden"
+          >
+            <div className="mb-6 flex items-center justify-between">
+              <h2 className="text-2xl font-bold text-slate-900">
+                Filters
               </h2>
 
-              <p className="mx-auto mt-5 max-w-2xl text-lg text-blue-100">
+              <button
+                onClick={() => setFiltersOpen(false)}
+                className="rounded-xl p-2 hover:bg-slate-100"
+              >
+                ✕
+              </button>
+            </div>
 
-                Contact our experts and we'll help you choose the perfect
-                laptop based on your budget and requirements.
+            <div className="mb-6">
+              <button
+                onClick={() => {
+                  setSelectedCategory(undefined)
+                  setPriceRange([0, 250000])
+                  setMinRating(0)
+                  setInStockOnly(false)
+                }}
+                className="w-full rounded-xl border border-slate-200 py-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+              >
+                Reset Filters
+              </button>
+            </div>
 
-              </p>
+            <ProductFilters
+              selectedCategory={selectedCategory}
+              onCategoryChange={setSelectedCategory}
+              onPriceChange={setPriceRange}
+              onInStockChange={setInStockOnly}
+              priceRange={priceRange}
+              inStockOnly={inStockOnly}
+            />
+          </motion.div>
+        </>
+      )}
 
-              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
 
-                <a
-                  href="tel:+919966111637"
-                  className="rounded-xl bg-white px-8 py-4 font-semibold text-primary transition "
-                >
-                  📞 Call Now
-                </a>
-
-                <a
-                  href="https://wa.me/919966111637"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-xl border border-white px-8 py-4 font-semibold text-white transition "
-                >
-                  💬 WhatsApp Us
-                </a>
-
-              </div>
-
-            </motion.div>
-
-          </div>
-
-        </div>
-
-      </section>
 
     </>
 

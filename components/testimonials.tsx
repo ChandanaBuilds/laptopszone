@@ -41,7 +41,7 @@ export function Testimonials() {
                         Testimonials
                     </span>
 
-                    <h2 className="mt-3 text-4xl font-bold text-gray-900 md:text-5xl">
+                    <h2 className="mt-3 text-4xl font-semibold text-gray-900 md:text-4xl">
                         What Our Customers Say
                     </h2>
 

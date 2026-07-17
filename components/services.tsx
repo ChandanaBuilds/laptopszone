@@ -78,7 +78,7 @@ const services = [
 export function Services() {
     return (
         <section className="bg-slate-50 py-8">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl px-6 lg:px-6">
 
                 {/* Heading */}
 
@@ -93,7 +93,7 @@ export function Services() {
                         OUR SERVICES
                     </span>
 
-                    <h2 className="mt-4 text-4xl font-bold text-gray-900 md:text-5xl">
+                    <h2 className="mt-4 text-4xl font-bold text-gray-900 md:text-4xl">
                         Professional Laptop Repair Solutions
                     </h2>
 
@@ -109,7 +109,6 @@ export function Services() {
                     {services.map((service, index) => {
 
                         const reverse = index % 2 !== 0
-                        const Icon = service.icon
 
                         return (
 
@@ -151,11 +150,9 @@ export function Services() {
 
                                 <div>
 
-                                    <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                                        <Icon size={28} />
-                                    </div>
 
-                                    <h3 className="text-3xl font-bold text-gray-900 lg:text-4xl">
+
+                                    <h3 className="text-3xl font-bold text-gray-900 lg:text-3xl">
                                         {service.title}
                                     </h3>
 

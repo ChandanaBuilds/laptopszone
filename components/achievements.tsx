@@ -57,7 +57,7 @@ export function Achievements() {
                         Our Achievements
                     </span>
 
-                    <h2 className="mt-3 text-4xl font-bold text-gray-900 md:text-5xl">
+                    <h2 className="mt-3 text-4xl font-semibold text-gray-900 md:text-4xl">
                         Numbers That Reflect Our Commitment
                     </h2>
 
@@ -89,7 +89,7 @@ export function Achievements() {
                                     <Icon size={30} />
                                 </div>
 
-                                <h3 className="mt-6 text-4xl font-bold text-primary">
+                                <h3 className="mt-6 text-3xl font-semibold text-primary">
                                     <CountUp
                                         end={stat.number}
                                         duration={2.5}

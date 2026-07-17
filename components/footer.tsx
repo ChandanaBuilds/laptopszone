@@ -27,7 +27,7 @@ const services = [
 export function Footer() {
   return (
     <footer className="bg-slate-200 text-black">
-      <div className="mx-auto max-w-7xl px-6 py-8 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
 
         <div className="grid gap-12 lg:grid-cols-4">
 
@@ -45,27 +45,7 @@ export function Footer() {
               Reliable laptop repair and upgrade solutions by experienced technicians.
             </p>
 
-            {/* <div className="mt-8 flex gap-4">
 
-              <Link
-                href="#"
-                className="rounded-full bg-slate-800 p-3 transition hover:bg-primary"
-              >
-              </Link>
-
-              <Link
-                href="#"
-                className="rounded-full bg-slate-800 p-3 transition hover:bg-primary"
-              >
-              </Link>
-
-              <Link
-                href="#"
-                className="rounded-full bg-slate-800 p-3 transition hover:bg-primary"
-              >
-              </Link>
-
-            </div> */}
           </div>
 
           {/* Quick Links */}

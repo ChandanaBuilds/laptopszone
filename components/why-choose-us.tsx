@@ -51,7 +51,7 @@ const features = [
 
 export function WhyChooseUs() {
     return (
-        <section className="bg-white py-6">
+        <section className="bg-white py-8">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
                 <motion.div
@@ -65,7 +65,7 @@ export function WhyChooseUs() {
                         Why Choose Us
                     </span>
 
-                    <h2 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
+                    <h2 className="mt-3 text-4xl md:text-4xl font-semibold text-gray-900">
                         Reliable Laptop Repair Services You Can Trust
                     </h2>
 
@@ -75,37 +75,38 @@ export function WhyChooseUs() {
                         every customer.
                     </p>
                 </motion.div>
-
-                <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {features.map((feature, index) => {
                         const Icon = feature.icon
 
                         return (
                             <motion.div
                                 key={feature.title}
-                                initial={{ opacity: 0, y: 40 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{
-                                    duration: 0.5,
-                                    delay: index * 0.1,
+                                    duration: 0.4,
+                                    delay: index * 0.08,
                                 }}
                                 whileHover={{
-                                    y: -8,
+                                    y: -4,
                                 }}
-                                className="group rounded-2xl border border-gray-200 bg-slate-50 p-8 transition-all duration-300 hover:border-primary hover:shadow-xl"
+                                className="group flex items-start gap-4 rounded-xl border border-gray-200 bg-white p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-lg"
                             >
-                                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-all group-hover:bg-primary group-hover:text-white">
-                                    <Icon size={30} />
+                                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                                    <Icon size={22} />
                                 </div>
 
-                                <h3 className="mb-3 text-2xl font-semibold text-gray-900">
-                                    {feature.title}
-                                </h3>
+                                <div>
+                                    <h3 className="text-lg font-semibold text-gray-900">
+                                        {feature.title}
+                                    </h3>
 
-                                <p className="leading-7 text-gray-600">
-                                    {feature.description}
-                                </p>
+                                    <p className="mt-1 text-sm leading-6 text-gray-600">
+                                        {feature.description}
+                                    </p>
+                                </div>
                             </motion.div>
                         )
                     })}

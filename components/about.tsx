@@ -19,7 +19,7 @@ export function About() {
                         About Us
                     </span>
 
-                    <h2 className="mt-3 text-4xl font-bold text-gray-900 md:text-5xl">
+                    <h2 className="mt-3 text-4xl font-semibold text-gray-900 md:text-4xl">
                         Trusted Laptop Repair Experts in Hyderabad
                     </h2>
 

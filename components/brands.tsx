@@ -35,7 +35,7 @@ export function Brands() {
                         Supported Brands
                     </span>
 
-                    <h2 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
+                    <h2 className="mt-3 text-4xl md:text-4xl font-semibold text-gray-900">
                         We Repair All Leading Laptop Brands
                     </h2>
 

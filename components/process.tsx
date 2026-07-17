@@ -59,7 +59,7 @@ export function Process() {
                         Our Process
                     </span>
 
-                    <h2 className="mt-3 text-4xl md:text-5xl font-bold text-gray-900">
+                    <h2 className="mt-3 text-4xl md:text-4xl font-bold text-gray-900">
                         Simple, Fast & Transparent
                     </h2>
 
