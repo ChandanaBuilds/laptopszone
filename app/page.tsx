@@ -6,7 +6,6 @@ import { Process } from '@/components/process'
 import { Brands } from '@/components/brands'
 import { Achievements } from '@/components/achievements'
 import { Testimonials } from '@/components/testimonials'
-import { Footer } from '@/components/footer'
 
 
 export default function HomePage() {
@@ -20,7 +19,6 @@ export default function HomePage() {
       <Brands />
       <Achievements />
       <Testimonials />
-      <Footer />
     </>
   )
 }
