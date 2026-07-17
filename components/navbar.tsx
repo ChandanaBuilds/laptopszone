@@ -13,6 +13,7 @@ export function Navbar() {
     { href: '/', label: 'Home' },
     { href: '/laptops', label: 'Laptops' },
     { href: '/accessories', label: 'Accessories' },
+    { href: '/service', label: 'Services' },
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
   ]
@@ -54,14 +55,6 @@ export function Navbar() {
           {/* Right Side */}
           <div className="flex items-center gap-4">
 
-            {/* Search */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="p-2 rounded-lg hover:bg-secondary"
-            >
-              <Search size={22} />
-            </motion.button>
 
             {/* Buy Now Button */}
             <motion.div
